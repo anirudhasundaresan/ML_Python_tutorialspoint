@@ -1,0 +1,6 @@
+Some important notes from the book: 
+-------------------------
+
+Unsupervised algorithms - used to detect anomalies, outliers such as fraud or group points and identify patterns. Deals with unlabeled data. KMeans, Random Forests, Hierarchical clustering, etc. 
+Semi-supervised - when data collection is costly, there will be a mix of expert labelled data and lots of unlabeled data. Keep unlabeled data for training and test using labeled data. 
+
