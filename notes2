@@ -1,0 +1,70 @@
+Overview of ML - Algorithms (traditional ones):
+-----------------------------------------------
+
+Logistic regression: 
+--------------------
+Used for classification. Also when you want to know the probabilities associated with a decision. It chooses parameters that maximize the likelihood of observing the sample values rather than minimizing the sum of squares. Log is the best function to replicate the step function (classification - 0/1). 
+
+logit(p) = log(p/1-p) = beta*x
+
+Prediction for the output is found using the non-linear function called the logistic function. Always maps inputs to [0,1].
+
+Decision Tree: 
+--------------
+Used in both classification and regression. For identifying which attributes to split along, decision trees use Gini criterion, Information Gain, Chi-square, entropy, etc. 
+
+Support Vector Machine:
+-----------------------
+Supervised classification algorithm. These vectors are classified by optimizing the line so that the closest point in each of the groups will be the farthest away from each other. Works on maximizing the distance of the support vectors from the maximum margin hyperplane. 
+
+Naive Bayes Algorithm:
+----------------------
+It is a classification technique based on Bayes’ theorem with an assumption that predictor variables are independent. In simple words, a Naive Bayes classifier assumes that the presence of a particular feature in a class is not related to the presence of any other feature.
+Usually used in text classification and in cases where there are multiple classes. 
+
+K-Nearest Neighbours: 
+---------------------
+For classification usually. It is a simple algorithm that stores all available cases and classifies new cases by a majority vote of its k neighbors. If k==1, then overfitting. 
+These distance functions can be Euclidean, Manhattan, Minkowski and Hamming distance. First three functions are used for continuous function and fourth one (Hamming) for categorical variables.
+Note: KNN is computationally expensive. Variables should be normalized else higher range variables can bias it. 
+
+K-Means:
+--------
+Unsupervised algorithm for clustering problems. 
+Algorithm: 
+- K-means picks k number of points for each cluster known as centroids.
+- Each data point forms a cluster with the closest centroids, that is k clusters. 
+- Finds the centroid of each cluster based on existing cluster members. Here we have new centroids.
+Use knee of the energy curve to find k. (MSE for a cluster = Sum of squares of difference between cluster centroid and data points). 
+
+Random Forest:
+--------------
+Random Forest is a popular supervised ensemble learning algorithm. ‘Ensemble’ means that it takes a bunch of ‘weak learners’ and has them work together to form one strong predictor. In this case, the weak learners are all randomly implemented decision trees that are brought together to form the strong predictor — a random forest.
+The goal of ensemble methods is to combine the predictions of several base estimators built with a given learning algorithm in order to improve generalizability / robustness over a single estimator.
+Like decision trees, forests of trees also extend to multi-output problems. 
+
+The sklearn.ensemble module includes two averaging algorithms based on randomized decision trees: the RandomForest algorithm and the Extra-Trees method. Both algorithms are perturb-and-combine techniques [B1998] specifically designed for trees. This means a diverse set of classifiers is created by introducing randomness in the classifier construction. The prediction of the ensemble is given as the averaged prediction of the individual classifiers.
+
+In contrast to the original publication [B2001], the scikit-learn implementation combines classifiers by averaging their probabilistic prediction, instead of letting each classifier vote for a single class.
+
+Random Forest is a trademark term for an ensemble of decision trees. In Random Forest, we have a collection of decision trees, known as “Forest”. To classify a new object based on attributes, each tree gives a classification and we say the tree “votes” for that class. The forest chooses the classification having the most votes (over all the trees in the forest). Each tree is planted & grown as follows:
+- If the number of cases in the training set is N, then sample of N cases is taken at random but with replacement. This sample will be the training set for growing the tree.
+- If there are M input variables, a number m<<M is specified such that at each node, m variables are selected at random out of the M and the best split on these m is used to split the node. The value of m is held constant during the forest growing.
+- Each tree is grown to the largest extent possible. There is no pruning.
+Pruning is done if there is overfitting. You can build the tree and then start pruning. 
+
+Dimensionality Reduction Algorithm:
+-----------------------------------
+Unsupervised learning task. Used to find out which variables are most informative. These algorithms find the input variables responsible for the greatest changes in the output variable. PCA is a dimensionality reduction algorithm. (https://en.wikipedia.org/wiki/Principal_component_analysis)
+(https://towardsdatascience.com/a-one-stop-shop-for-principal-component-analysis-5582fb7e0a9c - very important!)
+For PCA, you turn a set of variables into a new set of variables and drop some columns from this based on the eigenvalues of the ZtZ of the old variable matrix. 
+
+iBoosting Algorithms: (need to understand this better)
+--------------------
+The term ‘Boosting’ refers to a family of algorithms that converts weak learner to strong learners.
+Types of boosting algorithsm:
+- Adaboost
+- Gradient Tree boosting 
+- XGBoost 
+
+

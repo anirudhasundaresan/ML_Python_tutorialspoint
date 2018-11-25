@@ -1,0 +1,50 @@
+** Some important points from the book **
+-----------------------------------------
+
+General:
+--------
+Unsupervised algorithms - used to detect anomalies, outliers such as fraud or group points and identify patterns. Deals with unlabeled data. KMeans, Random Forests, Hierarchical clustering, etc. 
+Semi-supervised - when data collection is costly, there will be a mix of expert labelled data and lots of unlabeled data. Keep unlabeled data for training and test using labeled data. 
+
+Bias vs. Variance: 
+------------------
+There are two fundamental causes of prediction error for a model: bias and variance. A model with high bias is inflexible, but a model with high variance may be so flexible that it models the noise in the training set. That is, a model with high variance over-fits the training data, while a model with high bias under-fits the training data.
+Ideally, a model will have both low bias and variance, but efforts to decrease one will frequently increase the other. This is known as the bias-variance trade-off.
+
+Precision & Recall: 
+-------------------
+Precision is the fraction of the tumors that were predicted to be malignant that are actually malignant.
+Precision = TP/(TP + FP)
+
+Recall is the fraction of malignant tumors that the system identified. 
+Recall = TP/(TP + FN) # a.k.a TPR
+
+TPR = TP/(all +) = TP/(TP+FN)
+FPR = FP/(all -) = FP/(FP+TN)
+
+The precision and recall measures could reveal that a classifier with impressive accuracy actually fails to detect most of the malignant tumors. If most tumors are benign, even a classifier that never predicts malignancy could have high accuracy. A different classifier with lower accuracy and higher recall might be better suited to the task, since it will detect more of the malignant tumors.
+
+Classification: 
+---------------
+An important feature of naive Bayes classifier is that it only requires a small amount of training data to estimate the parameters necessary for classification. Also assumes all the features are independent of each other (hence, Naive). Used for spam filtering and document classification. 
+
+Recommendation: 
+---------------
+Recommendation engines usually produce a list of recommendations using either collaborative filtering or content-based filtering. The difference between the two types is in the way the recommendations are extracted. 
+Collaborative filtering constructs model from the past behavior of the current user as well as ratings given by other users. This model then is used to predict what this user might be interested in. 
+Content-based filtering, on the other hand, uses the features of the item itself in order to recommend more items to the user. 
+The similarity between items is the main motivation here. Collaborative filtering is often used more in such recommendation methods.
+
+Clustering: 
+-----------
+Clustering is often used to explore a dataset. Used in outlier detection applications such as detection of credit card fraud. A common application of clustering is discovering segments of customers within a market for a product. Clustering is a form of unsupervised learning.
+Note: A stopping condition is required to define the point where no clustering is required. A rule is required to verify the similarity between the newly encountered elements and the elements in the groups.
+
+There are two types of clustering: flat clustering and hierarchical clustering.
+Flat clustering creates a flat set of clusters without any clear structure that can relate clusters to each other. Hierarchical clustering creates a hierarchy of clusters. Hierarchical clustering gives a hierarchy of clusters as output, a structure that yields more information than the unstructured set of clusters returned by flat clustering. Hierarchical clustering does not require us to specify beforehand the number of clusters. The advantages of hierarchical clustering come at the cost of lower efficiency.
+In general, we select flat clustering when efficiency is important and hierarchical clustering when one of the potential problems of flat clustering is an issue. Moreover, it is believed by many researchers that hierarchical clustering produces better clusters than flat clustering.
+
+Two algorithms are frequently used: Canopy clustering and K-Means clustering.
+The canopy clustering algorithm is an unsupervised pre-clustering algorithm that is often used as preprocessing step for the K-means algorithm or the Hierarchical clustering algorithm. It is used to speed up clustering operations on large data sets, where using another algorithm directly may not be possible due to large size of the data sets.
+
+
