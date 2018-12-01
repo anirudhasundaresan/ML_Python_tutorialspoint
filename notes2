@@ -59,7 +59,7 @@ Unsupervised learning task. Used to find out which variables are most informativ
 (https://towardsdatascience.com/a-one-stop-shop-for-principal-component-analysis-5582fb7e0a9c - very important!)
 For PCA, you turn a set of variables into a new set of variables and drop some columns from this based on the eigenvalues of the ZtZ of the old variable matrix. 
 
-iBoosting Algorithms: (need to understand this better)
+Boosting Algorithms: (need to understand this better)
 --------------------
 The term ‘Boosting’ refers to a family of algorithms that converts weak learner to strong learners.
 Types of boosting algorithsm:
